@@ -4,24 +4,16 @@ const obj = {
     arr: [1, 2, 3, 4, 5],
     tom: 'there'
 };
-const arrValues=[obj.some,obj.dom,obj.arr.join(),obj.tom];
-console.log(arrValues)
+const arrValues=[];
+for (let key in obj){
+const value = obj[key];
+if (Array.isArray(value)) {
+arrValues.push(...value); // распаковываем массив
+} else {
+arrValues.push(value);
+}
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+console.log(arrValues);
 
 
